@@ -734,3 +734,8 @@ footer {
 .fade-in {
     animation: fadeIn 0.6s ease forwards;
 }
+
+.fa-solid, .fas {
+    font-weight: 900;
+    padding-left: 10px;
+}

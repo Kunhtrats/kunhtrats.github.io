@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miguel Alarcón | Portfolio</title>
+    <link rel="icon" type="svg" href="logo.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
-<body>
+<body data-theme="dark">
     <!-- Navigation -->
     <nav>
         <div class="container navbar">
             <a href="#" class="logo"><span>Kunhtrats</span></a>
             <div class="nav-links">
-                <a href="#hero" class="nav-link active" data-es="Inicio" data-en="Home">Inicio</a>
-                <a href="#about" class="nav-link" data-es="Sobre Mí" data-en="About Me">Sobre Mí</a>
-                <a href="#experience" class="nav-link" data-es="Experiencia" data-en="Experience">Experiencia</a>
-                <a href="#projects" class="nav-link" data-es="Proyectos" data-en="Projects">Proyectos</a>
-                <a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a>
+                <a href="#hero" class="nav-link active" data-es="Inicio" data-en="Home">Home</a>
+                <a href="#about" class="nav-link" data-es="Sobre Mí" data-en="About Me">About Me</a>
+                <a href="#experience" class="nav-link" data-es="Experiencia" data-en="Experience">Experience</a>
+                <a href="#projects" class="nav-link" data-es="Proyectos" data-en="Projects">Projects</a>
+                <a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contact</a>
             </div>
             <div class="settings">
-                <button id="theme-toggle" class="toggle-btn" title="Cambiar tema">
-                    <i class="fas fa-sun"></i>
+                <button id="theme-toggle" class="toggle-btn" title="Change theme">
+                    <i class="fas fa-moon"></i>
                 </button>
                 <div class="language-toggle" id="language-toggle">
-                    <span id="current-lang">ES</span>
+                    <span id="current-lang">EN</span>
                 </div>
                 <button class="mobile-menu-btn" id="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
@@ -32,11 +34,11 @@
             </div>
         </div>
         <div class="mobile-menu" id="mobile-menu">
-            <a href="#hero" class="nav-link active" data-es="Inicio" data-en="Home">Inicio</a>
-            <a href="#about" class="nav-link" data-es="Sobre Mí" data-en="About Me">Sobre Mí</a>
-            <a href="#experience" class="nav-link" data-es="Experiencia" data-en="Experience">Experiencia</a>
-            <a href="#projects" class="nav-link" data-es="Proyectos" data-en="Projects">Proyectos</a>
-            <a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a>
+            <a href="#hero" class="nav-link active" data-es="Inicio" data-en="Home">Home</a>
+            <a href="#about" class="nav-link" data-es="Sobre Mí" data-en="About Me">About Me</a>
+            <a href="#experience" class="nav-link" data-es="Experiencia" data-en="Experience">Experience</a>
+            <a href="#projects" class="nav-link" data-es="Proyectos" data-en="Projects">Projects</a>
+            <a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contact</a>
         </div>
     </nav>
 
@@ -45,19 +47,19 @@
         <div class="container hero-content">
             <div class="hero-text fade-in">
                 <h1 data-es="Miguel Benjamín Alarcón Rojas" data-en="Miguel Benjamín Alarcón Rojas">Miguel Benjamín Alarcón Rojas</h1>
-                <h2 data-es="Ingeniero en Informática" data-en="Computer Engineer">Ingeniero en Informática</h2>
+                <h2 data-es="Ingeniero en Informática" data-en="Computer Engineer">Computer Engineer</h2>
                 <p data-es="Especializado en desarrollo web y optimización de soluciones digitales. Experiencia en GraphQL, arquitecturas backend eficientes y automatización de flujos de trabajo." 
                    data-en="Specialized in web development and digital solution optimization. Experience with GraphQL, efficient backend architectures, and workflow automation.">
-                   Especializado en desarrollo web y optimización de soluciones digitales. Experiencia en GraphQL, arquitecturas backend eficientes y automatización de flujos de trabajo.
+                   Specialized in web development and digital solution optimization. Experience with GraphQL, efficient backend architectures, and workflow automation.
                 </p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">
                         <i class="fas fa-code"></i>
-                        <span data-es="Ver Proyectos" data-en="See Projects">Ver Proyectos</span>
+                        <span data-es="Ver Proyectos" data-en="See Projects">See Projects</span>
                     </a>
                     <a href="#contact" class="btn btn-outline">
                         <i class="fas fa-envelope"></i>
-                        <span data-es="Contactarme" data-en="Contact Me">Contactarme</span>
+                        <span data-es="Contactarme" data-en="Contact Me">Contact Me</span>
                     </a>
                 </div>
             </div>
@@ -67,23 +69,23 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title" data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
+            <h2 class="section-title" data-es="Sobre Mí" data-en="About Me">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3 data-es="¿Quién soy?" data-en="Who am I?">¿Quién soy?</h3>
+                    <h3 data-es="¿Quién soy?" data-en="Who am I?">Who am I?</h3>
                     <p data-es="Soy un Ingeniero en Informática apasionado por el desarrollo web y la optimización de soluciones digitales. Con experiencia en liderazgo de proyectos y en la integración de tecnologías modernas, busco constantemente mejorar la experiencia del usuario y crear soluciones eficientes."
                        data-en="I am a Computer Engineer passionate about web development and digital solution optimization. With experience in project leadership and integration of modern technologies, I constantly seek to improve the user experience and create efficient solutions.">
-                       Soy un Ingeniero en Informática apasionado por el desarrollo web y la optimización de soluciones digitales. Con experiencia en liderazgo de proyectos y en la integración de tecnologías modernas, busco constantemente mejorar la experiencia del usuario y crear soluciones eficientes.
+                       I am a Computer Engineer passionate about web development and digital solution optimization. With experience in project leadership and integration of modern technologies, I constantly seek to improve the user experience and create efficient solutions.
                     </p>
                     <p data-es="Mi experiencia abarca desde el desarrollo frontend y backend hasta la implementación de arquitecturas eficientes. También tengo experiencia en desarrollo de videojuegos, habiendo trabajado con Unreal Engine 5.2."
                        data-en="My experience ranges from frontend and backend development to implementing efficient architectures. I also have experience in video game development, having worked with Unreal Engine 5.2.">
-                       Mi experiencia abarca desde el desarrollo frontend y backend hasta la implementación de arquitecturas eficientes. También tengo experiencia en desarrollo de videojuegos, habiendo trabajado con Unreal Engine 5.2.
+                       My experience ranges from frontend and backend development to implementing efficient architectures. I also have experience in video game development, having worked with Unreal Engine 5.2.
                     </p>
                     <div class="skills">
-                        <h4 data-es="Mis Habilidades" data-en="My Skills">Mis Habilidades</h4>
+                        <h4 data-es="Mis Habilidades" data-en="My Skills">My Skills</h4>
                         <div class="skill-categories">
                             <div class="skill-category">
-                                <h5 data-es="Lenguajes de Programación" data-en="Programming Languages">Lenguajes de Programación</h5>
+                                <h5 data-es="Lenguajes de Programación" data-en="Programming Languages">Programming Languages</h5>
                                 <div class="skill-list">
                                     <span class="skill-tag">JavaScript</span>
                                     <span class="skill-tag">Python</span>
@@ -96,7 +98,7 @@
                                 </div>
                             </div>
                             <div class="skill-category">
-                                <h5 data-es="Frameworks y Bibliotecas" data-en="Frameworks & Libraries">Frameworks y Bibliotecas</h5>
+                                <h5 data-es="Frameworks y Bibliotecas" data-en="Frameworks & Libraries">Frameworks & Libraries</h5>
                                 <div class="skill-list">
                                     <span class="skill-tag">React</span>
                                     <span class="skill-tag">Remix</span>
@@ -108,7 +110,7 @@
                                 </div>
                             </div>
                             <div class="skill-category">
-                                <h5 data-es="Bases de Datos" data-en="Databases">Bases de Datos</h5>
+                                <h5 data-es="Bases de Datos" data-en="Databases">Databases</h5>
                                 <div class="skill-list">
                                     <span class="skill-tag">MySQL</span>
                                     <span class="skill-tag">PostgreSQL</span>
@@ -117,7 +119,7 @@
                                 </div>
                             </div>
                             <div class="skill-category">
-                                <h5 data-es="Herramientas y Tecnologías" data-en="Tools & Technologies">Herramientas y Tecnologías</h5>
+                                <h5 data-es="Herramientas y Tecnologías" data-en="Tools & Technologies">Tools & Technologies</h5>
                                 <div class="skill-list">
                                     <span class="skill-tag">Power BI</span>
                                     <span class="skill-tag">Looker</span>
@@ -125,7 +127,7 @@
                                     <span class="skill-tag">Git/GitHub</span>
                                     <span class="skill-tag">Plastic SCM</span>
                                     <span class="skill-tag">Node.js</span>
-                                    <span class="skill-tag">Unreal Engine 5.2</span>
+                                    <span class="skill-tag">Unreal Engine 5.5</span>
                                     <span class="skill-tag">Shopify</span>
                                 </div>
                             </div>
@@ -139,30 +141,57 @@
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
-            <h2 class="section-title" data-es="Experiencia" data-en="Experience">Experiencia</h2>
+            <h2 class="section-title" data-es="Experiencia" data-en="Experience">Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <div class="timeline-date">2025 - Present</div>
+                        <h3 class="timeline-title" data-es="Cofundador" data-en="Co-Founder">Co-Founder</h3>
+                        <h4 class="timeline-subtitle">Lazy Cat Studios - Santiago, Chile</h4>
+                        <div class="timeline-description">
+                            <ul>
+                                <li data-es="Cofundé un estudio indie de desarrollo de videojuegos, liderando la visión creativa y técnica de los proyectos." 
+                                    data-en="Co-founded an indie game development studio, leading the creative and technical vision for projects.">
+                                    Co-founded an indie game development studio, leading the creative and technical vision for projects.
+                                </li>
+                                <li data-es="Desarrollo de juegos multijugador utilizando Unreal Engine 5.5, implementando sistemas de red avanzados y optimización de experiencia."
+                                    data-en="Development of multiplayer games using Unreal Engine 5.5, implementing advanced networking systems and experience optimization.">
+                                    Development of multiplayer games using Unreal Engine 5.5, implementing advanced networking systems and experience optimization.
+                                </li>
+                                <li data-es="Creación de componentes reutilizables para el mercado de Unreal Engine, con enfoque en rendimiento y escalabilidad."
+                                    data-en="Creation of reusable components for the Unreal Engine marketplace, focused on performance and scalability.">
+                                    Creation of reusable components for the Unreal Engine marketplace, focused on performance and scalability.
+                                </li>
+                                <li data-es="Gestión del equipo de desarrollo y coordinación con artistas, diseñadores y especialistas de audio para crear experiencias completas."
+                                    data-en="Management of the development team and coordination with artists, designers, and audio specialists to create complete experiences.">
+                                    Management of the development team and coordination with artists, designers, and audio specialists to create complete experiences.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
                         <div class="timeline-date">2024 - 2025</div>
-                        <h3 class="timeline-title" data-es="Líder Desarrollo Web" data-en="Web Development Lead">Líder Desarrollo Web</h3>
+                        <h3 class="timeline-title" data-es="Líder Desarrollo Web" data-en="Web Development Lead">Web Development Lead</h3>
                         <h4 class="timeline-subtitle">Astroting - Santiago, Chile</h4>
                         <div class="timeline-description">
                             <ul>
                                 <li data-es="Lideré la implementación de soluciones web personalizadas para pequeñas empresas, mejorando su presencia digital hasta en un 30% y optimizando la experiencia de usuario." 
                                     data-en="Led the implementation of customized web solutions for small businesses, improving their digital presence by up to 30% and optimizing the user experience.">
-                                    Lideré la implementación de soluciones web personalizadas para pequeñas empresas, mejorando su presencia digital hasta en un 30% y optimizando la experiencia de usuario.
+                                    Led the implementation of customized web solutions for small businesses, improving their digital presence by up to 30% and optimizing the user experience.
                                 </li>
                                 <li data-es="Integré GraphQL para optimizar llamadas API, mejorando la velocidad de carga en un 40%."
                                     data-en="Integrated GraphQL to optimize API calls, improving loading speed by 40%.">
-                                    Integré GraphQL para optimizar llamadas API, mejorando la velocidad de carga en un 40%.
+                                    Integrated GraphQL to optimize API calls, improving loading speed by 40%.
                                 </li>
                                 <li data-es="Diseñé arquitecturas backend eficientes, reduciendo tiempos de carga y aumentando la estabilidad en entornos de alto tráfico en un 30%."
                                     data-en="Designed efficient backend architectures, reducing loading times and increasing stability in high-traffic environments by 30%.">
-                                    Diseñé arquitecturas backend eficientes, reduciendo tiempos de carga y aumentando la estabilidad en entornos de alto tráfico en un 30%.
+                                    Designed efficient backend architectures, reducing loading times and increasing stability in high-traffic environments by 30%.
                                 </li>
                                 <li data-es="Coordinación con equipos de diseño y marketing para garantizar una implementación alineada con las necesidades del negocio."
                                     data-en="Coordinated with design and marketing teams to ensure implementation aligned with business needs.">
-                                    Coordinación con equipos de diseño y marketing para garantizar una implementación alineada con las necesidades del negocio.
+                                    Coordinated with design and marketing teams to ensure implementation aligned with business needs.
                                 </li>
                             </ul>
                         </div>
@@ -171,21 +200,21 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-date">2023 - 2024</div>
-                        <h3 class="timeline-title" data-es="Practicante" data-en="Intern">Practicante</h3>
+                        <h3 class="timeline-title" data-es="Practicante" data-en="Intern">Intern</h3>
                         <h4 class="timeline-subtitle">Banco Ripley Chile - Santiago, Chile</h4>
                         <div class="timeline-description">
                             <ul>
                                 <li data-es="Documenté la conexión de servidores on-premise y procesos en SQL Server, asegurando la trazabilidad de los flujos de datos y mejorando la visibilidad de los procesos en un 25%."
                                     data-en="Documented the connection of on-premise servers and processes in SQL Server, ensuring data flow traceability and improving process visibility by 25%.">
-                                    Documenté la conexión de servidores on-premise y procesos en SQL Server, asegurando la trazabilidad de los flujos de datos y mejorando la visibilidad de los procesos en un 25%.
+                                    Documented the connection of on-premise servers and processes in SQL Server, ensuring data flow traceability and improving process visibility by 25%.
                                 </li>
                                 <li data-es="Diseñé reportes analíticos que facilitaron la toma de decisiones estratégicas, permitiendo anticipar problemas y reducir tiempos de respuesta en un 20%."
                                     data-en="Designed analytical reports that facilitated strategic decision-making, allowing problem anticipation and reducing response times by 20%.">
-                                    Diseñé reportes analíticos que facilitaron la toma de decisiones estratégicas, permitiendo anticipar problemas y reducir tiempos de respuesta en un 20%.
+                                    Designed analytical reports that facilitated strategic decision-making, allowing problem anticipation and reducing response times by 20%.
                                 </li>
                                 <li data-es="Colaboré con equipos técnicos y de negocio para garantizar la precisión y relevancia de los datos en la migración y gestión de información."
                                     data-en="Collaborated with technical and business teams to ensure data accuracy and relevance in information migration and management.">
-                                    Colaboré con equipos técnicos y de negocio para garantizar la precisión y relevancia de los datos en la migración y gestión de información.
+                                    Collaborated with technical and business teams to ensure data accuracy and relevance in information migration and management.
                                 </li>
                             </ul>
                         </div>
@@ -194,21 +223,21 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-date">2022 - 2023</div>
-                        <h3 class="timeline-title" data-es="Desarrollador de Videojuegos" data-en="Game Developer">Desarrollador de Videojuegos</h3>
-                        <h4 class="timeline-subtitle">Arcadius Entertainment - Florida, EEUU (Remoto)</h4>
+                        <h3 class="timeline-title" data-es="Desarrollador de Videojuegos" data-en="Game Developer">Game Developer</h3>
+                        <h4 class="timeline-subtitle">Arcadius Entertainment - Florida, EEUU (Remote)</h4>
                         <div class="timeline-description">
                             <ul>
                                 <li data-es="Implementé funcionalidades en Unreal Engine 5.2 utilizando Blueprint y C++, mejorando la estabilidad y rendimiento de las aplicaciones."
                                     data-en="Implemented functionalities in Unreal Engine 5.2 using Blueprint and C++, improving application stability and performance.">
-                                    Implementé funcionalidades en Unreal Engine 5.2 utilizando Blueprint y C++, mejorando la estabilidad y rendimiento de las aplicaciones.
+                                    Implemented functionalities in Unreal Engine 5.2 using Blueprint and C++, improving application stability and performance.
                                 </li>
                                 <li data-es="Optimicé la infraestructura de red, reduciendo la latencia en un 20% en aplicaciones con conexión en tiempo real."
                                     data-en="Optimized network infrastructure, reducing latency by 20% in real-time connected applications.">
-                                    Optimicé la infraestructura de red, reduciendo la latencia en un 20% en aplicaciones con conexión en tiempo real.
+                                    Optimized network infrastructure, reducing latency by 20% in real-time connected applications.
                                 </li>
                                 <li data-es="Colaboré con equipos internacionales en un entorno remoto, utilizando inglés como idioma principal en reuniones y documentación."
                                     data-en="Collaborated with international teams in a remote environment, using English as the primary language in meetings and documentation.">
-                                    Colaboré con equipos internacionales en un entorno remoto, utilizando inglés como idioma principal en reuniones y documentación.
+                                    Collaborated with international teams in a remote environment, using English as the primary language in meetings and documentation.
                                 </li>
                             </ul>
                         </div>
@@ -221,28 +250,43 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title" data-es="Proyectos" data-en="Projects">Proyectos</h2>
+            <h2 class="section-title" data-es="Proyectos" data-en="Projects">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image" style="background-color: #3498db;">
-                        <i class="fas fa-shopping-cart"></i>
+                    <div class="project-image" style="background-color: #9b59b6;">
+                        <i class="fas fa-gamepad"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title" data-es="E-Commerce Optimizado" data-en="Optimized E-Commerce">E-Commerce Optimizado</h3>
+                        <h3 class="project-title" data-es="Juego Multijugador en Desarrollo" data-en="Multiplayer Game in Development">Multiplayer Game in Development</h3>
                         <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">GraphQL</span>
-                            <span class="tag">Shopify</span>
+                            <span class="tag">Unreal Engine 5.5</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Blueprints</span>
+                            <span class="tag">Multiplayer</span>
                         </div>
-                        <p class="project-description" data-es="Implementación de una plataforma e-commerce personalizada con optimización de rendimiento y experiencia de usuario. El proyecto mejoró la velocidad de carga en un 40% y aumentó la tasa de conversión en un 25%."
-                           data-en="Implementation of a customized e-commerce platform with performance optimization and user experience. The project improved loading speed by 40% and increased conversion rate by 25%.">
-                           Implementación de una plataforma e-commerce personalizada con optimización de rendimiento y experiencia de usuario. El proyecto mejoró la velocidad de carga en un 40% y aumentó la tasa de conversión en un 25%.
+                        <p class="project-description" data-es="Primer juego en desarrollo para Lazy Cat Studios. Un título multijugador con sistemas de red optimizados, renderizado de alta fidelidad y mecánicas de juego innovadoras. Actualmente en fase de desarrollo inicial."
+                           data-en="First game in development for Lazy Cat Studios. A multiplayer title with optimized network systems, high-fidelity rendering, and innovative gameplay mechanics. Currently in early development phase.">
+                           First game in development for Lazy Cat Studios. A multiplayer title with optimized network systems, high-fidelity rendering, and innovative gameplay mechanics. Currently in early development phase.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background-color: #3498db;">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-es="Sort-er" data-en="Sort-er">Sort-er</h3>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">File Management</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                        <p class="project-description" data-es="Herramienta de clasificación de archivos que organiza automáticamente los archivos de una carpeta en subcarpetas según su extensión. Aumenta la productividad y mejora la organización del sistema de archivos."
+                           data-en="File sorting tool that automatically organizes files from a folder into subfolders based on their extension. Increases productivity and improves file system organization.">
+                           File sorting tool that automatically organizes files from a folder into subfolders based on their extension. Increases productivity and improves file system organization.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link" target="_blank" data-es="Ver Proyecto" data-en="View Project">
-                                <i class="fas fa-external-link-alt"></i> Ver Proyecto
-                            </a>
-                            <a href="#" class="project-link" target="_blank">
+                            <a href="https://github.com/Kunhtrats/sort-er" class="project-link" target="_blank">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
                         </div>
@@ -250,52 +294,20 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image" style="background-color: #2ecc71;">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-cubes"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title" data-es="Dashboard Analítico" data-en="Analytical Dashboard">Dashboard Analítico</h3>
+                        <h3 class="project-title" data-es="Componentes FAB para Unreal Engine" data-en="FAB Components for Unreal Engine">FAB Components for Unreal Engine</h3>
                         <div class="project-tags">
-                            <span class="tag">Angular</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">PostgreSQL</span>
-                        </div>
-                        <p class="project-description" data-es="Desarrollo de un dashboard analítico para visualización de datos empresariales en tiempo real. La solución permitió reducir el tiempo de toma de decisiones estratégicas en un 30%."
-                           data-en="Development of an analytical dashboard for real-time business data visualization. The solution reduced strategic decision-making time by 30%.">
-                           Desarrollo de un dashboard analítico para visualización de datos empresariales en tiempo real. La solución permitió reducir el tiempo de toma de decisiones estratégicas en un 30%.
-                        </p>
-                        <div class="project-links">
-                            <a href="#" class="project-link" target="_blank" data-es="Ver Proyecto" data-en="View Project">
-                                <i class="fas fa-external-link-alt"></i> Ver Proyecto
-                            </a>
-                            <a href="#" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-color: #9b59b6;">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title" data-es="Sistema Multijugador" data-en="Multiplayer System">Sistema Multijugador</h3>
-                        <div class="project-tags">
-                            <span class="tag">Unreal Engine 5.2</span>
+                            <span class="tag">Unreal Engine</span>
                             <span class="tag">C++</span>
-                            <span class="tag">Blueprints</span>
+                            <span class="tag">Optimization</span>
+                            <span class="tag">Marketplace</span>
                         </div>
-                        <p class="project-description" data-es="Desarrollo de un sistema multijugador para juego de acción en tiempo real con Unreal Engine 5.2. Implementé optimizaciones de red que redujeron la latencia en un 20% y mejoraron la experiencia de juego."
-                           data-en="Development of a multiplayer system for a real-time action game with Unreal Engine 5.2. I implemented network optimizations that reduced latency by 20% and improved gameplay experience.">
-                           Desarrollo de un sistema multijugador para juego de acción en tiempo real con Unreal Engine 5.2. Implementé optimizaciones de red que redujeron la latencia en un 20% y mejoraron la experiencia de juego.
+                        <p class="project-description" data-es="Desarrollo de componentes de optimización y multijugador para el Marketplace de Unreal Engine. Soluciones que mejoran el rendimiento y facilitan la implementación de funcionalidades de red para desarrolladores."
+                           data-en="Development of optimization and multiplayer components for the Unreal Engine Marketplace. Solutions that improve performance and facilitate the implementation of network functionality for developers.">
+                           Development of optimization and multiplayer components for the Unreal Engine Marketplace. Solutions that improve performance and facilitate the implementation of network functionality for developers.
                         </p>
-                        <div class="project-links">
-                            <a href="#" class="project-link" target="_blank" data-es="Ver Proyecto" data-en="View Project">
-                                <i class="fas fa-external-link-alt"></i> Ver Proyecto
-                            </a>
-                            <a href="#" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -305,13 +317,13 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="section-title" data-es="Contacto" data-en="Contact">Contacto</h2>
+            <h2 class="section-title" data-es="Contacto" data-en="Contact">Contact</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3 class="contact-heading" data-es="¡Hablemos!" data-en="Let's Talk!">¡Hablemos!</h3>
+                    <h3 class="contact-heading" data-es="¡Hablemos!" data-en="Let's Talk!">Let's Talk!</h3>
                     <p class="contact-text" data-es="Estoy interesado en oportunidades de trabajo donde pueda contribuir, aprender y crecer. Si tienes una solicitud o pregunta, no dudes en contactarme."
                        data-en="I'm interested in job opportunities where I can contribute, learn, and grow. If you have a request or question, don't hesitate to contact me.">
-                       Estoy interesado en oportunidades de trabajo donde pueda contribuir, aprender y crecer. Si tienes una solicitud o pregunta, no dudes en contactarme.
+                       I'm interested in job opportunities where I can contribute, learn, and grow. If you have a request or question, don't hesitate to contact me.
                     </p>
                     <div class="contact-links">
                         <a href="mailto:mi.alarconr@proton.me" class="contact-link">
@@ -324,7 +336,7 @@
                         </a>
                         <a href="https://www.linkedin.com/in/" class="contact-link" target="_blank">
                             <i class="fab fa-linkedin"></i>
-                            <span data-es="Perfil de LinkedIn" data-en="LinkedIn Profile">Perfil de LinkedIn</span>
+                            <span data-es="Perfil de LinkedIn" data-en="LinkedIn Profile">LinkedIn Profile</span>
                         </a>
                         <a href="https://github.com/kunhtrats" class="contact-link" target="_blank">
                             <i class="fab fa-github"></i>
@@ -341,7 +353,7 @@
         <div class="container">
             <p class="footer-text" data-es="© 2025 Miguel Benjamín Alarcón Rojas. Todos los derechos reservados." 
                data-en="© 2025 Miguel Benjamín Alarcón Rojas. All rights reserved.">
-               © 2025 Miguel Benjamín Alarcón Rojas. Todos los derechos reservados.
+               © 2025 Miguel Benjamín Alarcón Rojas. All rights reserved.
             </p>
             <div class="footer-links">
                 <a href="https://github.com/kunhtrats" class="footer-link" target="_blank">
@@ -356,141 +368,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // DOM Elements
-        const themeToggle = document.getElementById('theme-toggle');
-        const languageToggle = document.getElementById('language-toggle');
-        const currentLang = document.getElementById('current-lang');
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        // Theme Toggle
-        let isDarkMode = localStorage.getItem('darkMode') === 'enabled';
-        
-        if (isDarkMode) {
-            document.body.setAttribute('data-theme', 'dark');
-            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-        
-        themeToggle.addEventListener('click', () => {
-            isDarkMode = !isDarkMode;
-            if (isDarkMode) {
-                document.body.setAttribute('data-theme', 'dark');
-                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                document.body.removeAttribute('data-theme');
-                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        });
-
-        // Language Toggle
-        let isEnglish = localStorage.getItem('language') === 'en';
-        
-        if (isEnglish) {
-            setLanguage('en');
-            currentLang.textContent = 'EN';
-        }
-        
-        languageToggle.addEventListener('click', () => {
-            isEnglish = !isEnglish;
-            if (isEnglish) {
-                setLanguage('en');
-                currentLang.textContent = 'EN';
-                localStorage.setItem('language', 'en');
-            } else {
-                setLanguage('es');
-                currentLang.textContent = 'ES';
-                localStorage.setItem('language', 'es');
-            }
-        });
-
-        function setLanguage(lang) {
-            const elements = document.querySelectorAll('[data-' + lang + ']');
-            elements.forEach(element => {
-                const translation = element.getAttribute('data-' + lang);
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    element.placeholder = translation;
-                } else {
-                    element.textContent = translation;
-                }
-            });
-        }
-
-        // Mobile Menu
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-
-        // Smooth Scrolling
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Hide mobile menu if it's open
-                if (mobileMenu.classList.contains('active')) {
-                    mobileMenu.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-                
-                // Scroll to section
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetSection.offsetTop - 70,
-                    behavior: 'smooth'
-                });
-                
-                // Set active link
-                navLinks.forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-
-        // Update active link on scroll
-        window.addEventListener('scroll', () => {
-            const scrollPosition = window.scrollY;
-            
-            document.querySelectorAll('section').forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + sectionId) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        });
-
-        // Add animations on scroll
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        function checkFade() {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementTop < windowHeight * 0.8) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', checkFade);
-        window.addEventListener('load', checkFade);
-    </script>
 </body>
 </html>
