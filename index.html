@@ -6,58 +6,89 @@
     <title>Miguel Alarcón | Portfolio</title>
     <link rel="icon" type="svg" href="logo.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#e91e63',
+                            dark: '#c2185b',
+                            light: '#f48fb1'
+                        },
+                        secondary: {
+                            DEFAULT: '#f8bbd0',
+                            dark: '#880e4f'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .smooth-transition { transition: all 0.3s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeIn 0.6s ease forwards; }
+    </style>
 </head>
-<body data-theme="dark">
+<body class="dark bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 smooth-transition">
     <!-- Navigation -->
-    <nav>
-        <div class="container navbar">
-            <a href="#" class="logo"><span>Kunhtrats</span></a>
-            <div class="nav-links">
-                <a href="#hero" class="nav-link active" data-es="Inicio" data-en="Home">Home</a>
-                <a href="#about" class="nav-link" data-es="Sobre Mí" data-en="About Me">About Me</a>
-                <a href="#experience" class="nav-link" data-es="Experiencia" data-en="Experience">Experience</a>
-                <a href="#projects" class="nav-link" data-es="Proyectos" data-en="Projects">Projects</a>
-                <a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contact</a>
-            </div>
-            <div class="settings">
-                <button id="theme-toggle" class="toggle-btn" title="Change theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <div class="language-toggle" id="language-toggle">
-                    <span id="current-lang">EN</span>
+    <nav class="fixed top-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-2xl font-bold text-primary hover:text-primary-dark smooth-transition">
+                    <span class="text-primary-dark dark:text-primary-light">Kunhtrats</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light font-medium smooth-transition" data-es="Inicio" data-en="Home">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light font-medium smooth-transition" data-es="Sobre Mí" data-en="About Me">About Me</a>
+                    <a href="#experience" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light font-medium smooth-transition" data-es="Experiencia" data-en="Experience">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light font-medium smooth-transition" data-es="Proyectos" data-en="Projects">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light font-medium smooth-transition" data-es="Contacto" data-en="Contact">Contact</a>
                 </div>
-                <button class="mobile-menu-btn" id="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
+
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 smooth-transition">
+                        <i class="fas fa-moon text-gray-700 dark:text-gray-300"></i>
+                    </button>
+                    <button id="language-toggle" class="px-3 py-1 rounded-lg font-semibold text-primary hover:bg-primary hover:text-white smooth-transition">
+                        <span id="current-lang">EN</span>
+                    </button>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800">
+                        <i class="fas fa-bars text-gray-700 dark:text-gray-300"></i>
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="mobile-menu" id="mobile-menu">
-            <a href="#hero" class="nav-link active" data-es="Inicio" data-en="Home">Home</a>
-            <a href="#about" class="nav-link" data-es="Sobre Mí" data-en="About Me">About Me</a>
-            <a href="#experience" class="nav-link" data-es="Experiencia" data-en="Experience">Experience</a>
-            <a href="#projects" class="nav-link" data-es="Proyectos" data-en="Projects">Projects</a>
-            <a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contact</a>
+
+            <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-2">
+                <a href="#hero" class="block py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 nav-link" data-es="Inicio" data-en="Home">Home</a>
+                <a href="#about" class="block py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 nav-link" data-es="Sobre Mí" data-en="About Me">About Me</a>
+                <a href="#experience" class="block py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 nav-link" data-es="Experiencia" data-en="Experience">Experience</a>
+                <a href="#projects" class="block py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 nav-link" data-es="Proyectos" data-en="Projects">Projects</a>
+                <a href="#contact" class="block py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 nav-link" data-es="Contacto" data-en="Contact">Contact</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero">
-        <div class="container hero-content">
-            <div class="hero-text fade-in">
-                <h1 data-es="Miguel Benjamín Alarcón Rojas" data-en="Miguel Benjamín Alarcón Rojas">Miguel Benjamín Alarcón Rojas</h1>
-                <h2 data-es="Ingeniero en Informática" data-en="Computer Engineer">Computer Engineer</h2>
-                <p data-es="Especializado en desarrollo web y optimización de soluciones digitales. Experiencia en GraphQL, arquitecturas backend eficientes y automatización de flujos de trabajo." 
-                   data-en="Specialized in web development and digital solution optimization. Experience with GraphQL, efficient backend architectures, and workflow automation.">
-                   Specialized in web development and digital solution optimization. Experience with GraphQL, efficient backend architectures, and workflow automation.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">
+    <section id="hero" class="min-h-screen flex items-center pt-20 bg-gradient-to-br from-gray-50 via-secondary/20 to-gray-50 dark:from-gray-900 dark:via-secondary-dark/20 dark:to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-3xl fade-in">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-es="Miguel Benjamín Alarcón Rojas" data-en="Miguel Benjamín Alarcón Rojas">Miguel Benjamín Alarcón Rojas</h1>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-medium text-primary-dark dark:text-primary-light mb-8" data-es="Ingeniero en Informática" data-en="Computer Engineer">Computer Engineer</h2>
+                <p class="text-lg md:text-xl mb-10 text-gray-700 dark:text-gray-300" data-es="Especializado en desarrollo web y optimización de soluciones digitales. Experiencia en GraphQL, arquitecturas backend eficientes y automatización de flujos de trabajo." data-en="Specialized in web development and digital solution optimization. Experience with GraphQL, efficient backend architectures, and workflow automation.">Specialized in web development and digital solution optimization. Experience with GraphQL, efficient backend architectures, and workflow automation.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#projects" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 smooth-transition">
                         <i class="fas fa-code"></i>
                         <span data-es="Ver Proyectos" data-en="See Projects">See Projects</span>
                     </a>
-                    <a href="#contact" class="btn btn-outline">
+                    <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 smooth-transition">
                         <i class="fas fa-envelope"></i>
                         <span data-es="Contactarme" data-en="Contact Me">Contact Me</span>
                     </a>
@@ -67,69 +98,68 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title" data-es="Sobre Mí" data-en="About Me">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3 data-es="¿Quién soy?" data-en="Who am I?">Who am I?</h3>
-                    <p data-es="Soy un Ingeniero en Informática apasionado por el desarrollo web y la optimización de soluciones digitales. Con experiencia en liderazgo de proyectos y en la integración de tecnologías modernas, busco constantemente mejorar la experiencia del usuario y crear soluciones eficientes."
-                       data-en="I am a Computer Engineer passionate about web development and digital solution optimization. With experience in project leadership and integration of modern technologies, I constantly seek to improve the user experience and create efficient solutions.">
-                       I am a Computer Engineer passionate about web development and digital solution optimization. With experience in project leadership and integration of modern technologies, I constantly seek to improve the user experience and create efficient solutions.
-                    </p>
-                    <p data-es="Mi experiencia abarca desde el desarrollo frontend y backend hasta la implementación de arquitecturas eficientes. También tengo experiencia en desarrollo de videojuegos, habiendo trabajado con Unreal Engine 5.2."
-                       data-en="My experience ranges from frontend and backend development to implementing efficient architectures. I also have experience in video game development, having worked with Unreal Engine 5.2.">
-                       My experience ranges from frontend and backend development to implementing efficient architectures. I also have experience in video game development, having worked with Unreal Engine 5.2.
-                    </p>
-                    <div class="skills">
-                        <h4 data-es="Mis Habilidades" data-en="My Skills">My Skills</h4>
-                        <div class="skill-categories">
-                            <div class="skill-category">
-                                <h5 data-es="Lenguajes de Programación" data-en="Programming Languages">Programming Languages</h5>
-                                <div class="skill-list">
-                                    <span class="skill-tag">JavaScript</span>
-                                    <span class="skill-tag">Python</span>
-                                    <span class="skill-tag">SQL</span>
-                                    <span class="skill-tag">C++</span>
-                                    <span class="skill-tag">TypeScript</span>
-                                    <span class="skill-tag">Java</span>
-                                    <span class="skill-tag">HTML</span>
-                                    <span class="skill-tag">CSS</span>
-                                </div>
+    <section id="about" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-primary dark:text-primary-light" data-es="Sobre Mí" data-en="About Me">About Me</h2>
+            
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-primary-dark dark:text-primary-light" data-es="¿Quién soy?" data-en="Who am I?">Who am I?</h3>
+                    <p class="text-lg mb-4 text-gray-700 dark:text-gray-300" data-es="Soy un Ingeniero en Informática apasionado por el desarrollo web y la optimización de soluciones digitales. Con experiencia en liderazgo de proyectos y en la integración de tecnologías modernas, busco constantemente mejorar la experiencia del usuario y crear soluciones eficientes." data-en="I am a Computer Engineer passionate about web development and digital solution optimization. With experience in project leadership and integration of modern technologies, I constantly seek to improve the user experience and create efficient solutions.">I am a Computer Engineer passionate about web development and digital solution optimization. With experience in project leadership and integration of modern technologies, I constantly seek to improve the user experience and create efficient solutions.</p>
+                    <p class="text-lg text-gray-700 dark:text-gray-300" data-es="Mi experiencia abarca desde el desarrollo frontend y backend hasta la implementación de arquitecturas eficientes. También tengo experiencia en desarrollo de videojuegos, habiendo trabajado con Unreal Engine 5.2." data-en="My experience ranges from frontend and backend development to implementing efficient architectures. I also have experience in video game development, having worked with Unreal Engine 5.2.">My experience ranges from frontend and backend development to implementing efficient architectures. I also have experience in video game development, having worked with Unreal Engine 5.2.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-2xl font-semibold mb-6 text-primary dark:text-primary-light" data-es="Mis Habilidades" data-en="My Skills">My Skills</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl">
+                            <h5 class="font-semibold mb-3 text-primary-dark dark:text-primary-light" data-es="Lenguajes de Programación" data-en="Programming Languages">Programming Languages</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">JavaScript</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Python</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">SQL</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">C++</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">TypeScript</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Java</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">HTML</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">CSS</span>
                             </div>
-                            <div class="skill-category">
-                                <h5 data-es="Frameworks y Bibliotecas" data-en="Frameworks & Libraries">Frameworks & Libraries</h5>
-                                <div class="skill-list">
-                                    <span class="skill-tag">React</span>
-                                    <span class="skill-tag">Remix</span>
-                                    <span class="skill-tag">Angular</span>
-                                    <span class="skill-tag">Express.js</span>
-                                    <span class="skill-tag">Prisma</span>
-                                    <span class="skill-tag">Bootstrap</span>
-                                    <span class="skill-tag">Tailwind CSS</span>
-                                </div>
+                        </div>
+
+                        <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl">
+                            <h5 class="font-semibold mb-3 text-primary-dark dark:text-primary-light" data-es="Frameworks y Bibliotecas" data-en="Frameworks & Libraries">Frameworks & Libraries</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">React</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Remix</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Angular</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Express.js</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Prisma</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Bootstrap</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Tailwind CSS</span>
                             </div>
-                            <div class="skill-category">
-                                <h5 data-es="Bases de Datos" data-en="Databases">Databases</h5>
-                                <div class="skill-list">
-                                    <span class="skill-tag">MySQL</span>
-                                    <span class="skill-tag">PostgreSQL</span>
-                                    <span class="skill-tag">MongoDB</span>
-                                    <span class="skill-tag">SQLite</span>
-                                </div>
+                        </div>
+
+                        <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl">
+                            <h5 class="font-semibold mb-3 text-primary-dark dark:text-primary-light" data-es="Bases de Datos" data-en="Databases">Databases</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">MySQL</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">MongoDB</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">SQLite</span>
                             </div>
-                            <div class="skill-category">
-                                <h5 data-es="Herramientas y Tecnologías" data-en="Tools & Technologies">Tools & Technologies</h5>
-                                <div class="skill-list">
-                                    <span class="skill-tag">Power BI</span>
-                                    <span class="skill-tag">Looker</span>
-                                    <span class="skill-tag">Docker</span>
-                                    <span class="skill-tag">Git/GitHub</span>
-                                    <span class="skill-tag">Plastic SCM</span>
-                                    <span class="skill-tag">Node.js</span>
-                                    <span class="skill-tag">Unreal Engine 5.5</span>
-                                    <span class="skill-tag">Shopify</span>
-                                </div>
+                        </div>
+
+                        <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl">
+                            <h5 class="font-semibold mb-3 text-primary-dark dark:text-primary-light" data-es="Herramientas y Tecnologías" data-en="Tools & Technologies">Tools & Technologies</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Power BI</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Looker</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Docker</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Git/GitHub</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Plastic SCM</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Node.js</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Unreal Engine 5.5</span>
+                                <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Shopify</span>
                             </div>
                         </div>
                     </div>
@@ -139,107 +169,89 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title" data-es="Experiencia" data-en="Experience">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2025 - Present</div>
-                        <h3 class="timeline-title" data-es="Cofundador" data-en="Co-Founder">Co-Founder</h3>
-                        <h4 class="timeline-subtitle">Lazy Cat Studios - Santiago, Chile</h4>
-                        <div class="timeline-description">
-                            <ul>
-                                <li data-es="Cofundé un estudio indie de desarrollo de videojuegos, liderando la visión creativa y técnica de los proyectos." 
-                                    data-en="Co-founded an indie game development studio, leading the creative and technical vision for projects.">
-                                    Co-founded an indie game development studio, leading the creative and technical vision for projects.
-                                </li>
-                                <li data-es="Desarrollo de juegos multijugador utilizando Unreal Engine 5.5, implementando sistemas de red avanzados y optimización de experiencia."
-                                    data-en="Development of multiplayer games using Unreal Engine 5.5, implementing advanced networking systems and experience optimization.">
-                                    Development of multiplayer games using Unreal Engine 5.5, implementing advanced networking systems and experience optimization.
-                                </li>
-                                <li data-es="Creación de componentes reutilizables para el mercado de Unreal Engine, con enfoque en rendimiento y escalabilidad."
-                                    data-en="Creation of reusable components for the Unreal Engine marketplace, focused on performance and scalability.">
-                                    Creation of reusable components for the Unreal Engine marketplace, focused on performance and scalability.
-                                </li>
-                                <li data-es="Gestión del equipo de desarrollo y coordinación con artistas, diseñadores y especialistas de audio para crear experiencias completas."
-                                    data-en="Management of the development team and coordination with artists, designers, and audio specialists to create complete experiences.">
-                                    Management of the development team and coordination with artists, designers, and audio specialists to create complete experiences.
-                                </li>
-                            </ul>
+    <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-primary dark:text-primary-light" data-es="Experiencia" data-en="Experience">Experience</h2>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary"></div>
+
+                <div class="space-y-12">
+                    <div class="relative">
+                        <div class="md:flex md:items-center">
+                            <div class="md:w-1/2 md:pr-8 md:text-right">
+                                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-primary-dark">
+                                    <span class="inline-block px-3 py-1 bg-primary text-white text-sm font-semibold rounded-full mb-2">2025 - Present</span>
+                                    <h3 class="text-xl font-bold text-primary dark:text-primary-light mb-2" data-es="Cofundador" data-en="Co-Founder">Co-Founder</h3>
+                                    <h4 class="text-lg font-semibold text-primary-dark dark:text-primary mb-3">Lazy Cat Studios - Santiago, Chile</h4>
+                                    <ul class="text-left space-y-2 text-gray-700 dark:text-gray-300">
+                                        <li data-es="Cofundé un estudio indie de desarrollo de videojuegos, liderando la visión creativa y técnica de los proyectos." data-en="Co-founded an indie game development studio, leading the creative and technical vision for projects.">• Co-founded an indie game development studio, leading the creative and technical vision for projects.</li>
+                                        <li data-es="Desarrollo de juegos multijugador utilizando Unreal Engine 5.5, implementando sistemas de red avanzados y optimización de experiencia." data-en="Development of multiplayer games using Unreal Engine 5.5, implementing advanced networking systems and experience optimization.">• Development of multiplayer games using Unreal Engine 5.5, implementing advanced networking systems.</li>
+                                        <li data-es="Creación de componentes reutilizables para el mercado de Unreal Engine, con enfoque en rendimiento y escalabilidad." data-en="Creation of reusable components for the Unreal Engine marketplace, focused on performance and scalability.">• Creation of reusable components for the Unreal Engine marketplace.</li>
+                                        <li data-es="Gestión del equipo de desarrollo y coordinación con artistas, diseñadores y especialistas de audio para crear experiencias completas." data-en="Management of the development team and coordination with artists, designers, and audio specialists to create complete experiences.">• Management of the development team and coordination with artists, designers, and audio specialists.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-primary-dark"></div>
+                            <div class="md:w-1/2"></div>
                         </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2024 - 2025</div>
-                        <h3 class="timeline-title" data-es="Líder Desarrollo Web" data-en="Web Development Lead">Web Development Lead</h3>
-                        <h4 class="timeline-subtitle">Astroting - Santiago, Chile</h4>
-                        <div class="timeline-description">
-                            <ul>
-                                <li data-es="Lideré la implementación de soluciones web personalizadas para pequeñas empresas, mejorando su presencia digital hasta en un 30% y optimizando la experiencia de usuario." 
-                                    data-en="Led the implementation of customized web solutions for small businesses, improving their digital presence by up to 30% and optimizing the user experience.">
-                                    Led the implementation of customized web solutions for small businesses, improving their digital presence by up to 30% and optimizing the user experience.
-                                </li>
-                                <li data-es="Integré GraphQL para optimizar llamadas API, mejorando la velocidad de carga en un 40%."
-                                    data-en="Integrated GraphQL to optimize API calls, improving loading speed by 40%.">
-                                    Integrated GraphQL to optimize API calls, improving loading speed by 40%.
-                                </li>
-                                <li data-es="Diseñé arquitecturas backend eficientes, reduciendo tiempos de carga y aumentando la estabilidad en entornos de alto tráfico en un 30%."
-                                    data-en="Designed efficient backend architectures, reducing loading times and increasing stability in high-traffic environments by 30%.">
-                                    Designed efficient backend architectures, reducing loading times and increasing stability in high-traffic environments by 30%.
-                                </li>
-                                <li data-es="Coordinación con equipos de diseño y marketing para garantizar una implementación alineada con las necesidades del negocio."
-                                    data-en="Coordinated with design and marketing teams to ensure implementation aligned with business needs.">
-                                    Coordinated with design and marketing teams to ensure implementation aligned with business needs.
-                                </li>
-                            </ul>
+
+                    <div class="relative">
+                        <div class="md:flex md:items-center md:flex-row-reverse">
+                            <div class="md:w-1/2 md:pl-8">
+                                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-primary-dark">
+                                    <span class="inline-block px-3 py-1 bg-primary text-white text-sm font-semibold rounded-full mb-2">2024 - 2025</span>
+                                    <h3 class="text-xl font-bold text-primary dark:text-primary-light mb-2" data-es="Líder Desarrollo Web" data-en="Web Development Lead">Web Development Lead</h3>
+                                    <h4 class="text-lg font-semibold text-primary-dark dark:text-primary mb-3">Astroting - Santiago, Chile</h4>
+                                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                        <li data-es="Lideré la implementación de soluciones web personalizadas para pequeñas empresas, mejorando su presencia digital hasta en un 30% y optimizando la experiencia de usuario." data-en="Led the implementation of customized web solutions for small businesses, improving their digital presence by up to 30% and optimizing the user experience.">• Led implementation of customized web solutions, improving digital presence by 30%.</li>
+                                        <li data-es="Integré GraphQL para optimizar llamadas API, mejorando la velocidad de carga en un 40%." data-en="Integrated GraphQL to optimize API calls, improving loading speed by 40%.">• Integrated GraphQL to optimize API calls, improving speed by 40%.</li>
+                                        <li data-es="Diseñé arquitecturas backend eficientes, reduciendo tiempos de carga y aumentando la estabilidad en entornos de alto tráfico en un 30%." data-en="Designed efficient backend architectures, reducing loading times and increasing stability in high-traffic environments by 30%.">• Designed efficient backend architectures, increasing stability by 30%.</li>
+                                        <li data-es="Coordinación con equipos de diseño y marketing para garantizar una implementación alineada con las necesidades del negocio." data-en="Coordinated with design and marketing teams to ensure implementation aligned with business needs.">• Coordinated with design and marketing teams to ensure implementation aligned with business needs.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-primary-dark"></div>
+                            <div class="md:w-1/2"></div>
                         </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2023 - 2024</div>
-                        <h3 class="timeline-title" data-es="Practicante" data-en="Intern">Intern</h3>
-                        <h4 class="timeline-subtitle">Banco Ripley Chile - Santiago, Chile</h4>
-                        <div class="timeline-description">
-                            <ul>
-                                <li data-es="Documenté la conexión de servidores on-premise y procesos en SQL Server, asegurando la trazabilidad de los flujos de datos y mejorando la visibilidad de los procesos en un 25%."
-                                    data-en="Documented the connection of on-premise servers and processes in SQL Server, ensuring data flow traceability and improving process visibility by 25%.">
-                                    Documented the connection of on-premise servers and processes in SQL Server, ensuring data flow traceability and improving process visibility by 25%.
-                                </li>
-                                <li data-es="Diseñé reportes analíticos que facilitaron la toma de decisiones estratégicas, permitiendo anticipar problemas y reducir tiempos de respuesta en un 20%."
-                                    data-en="Designed analytical reports that facilitated strategic decision-making, allowing problem anticipation and reducing response times by 20%.">
-                                    Designed analytical reports that facilitated strategic decision-making, allowing problem anticipation and reducing response times by 20%.
-                                </li>
-                                <li data-es="Colaboré con equipos técnicos y de negocio para garantizar la precisión y relevancia de los datos en la migración y gestión de información."
-                                    data-en="Collaborated with technical and business teams to ensure data accuracy and relevance in information migration and management.">
-                                    Collaborated with technical and business teams to ensure data accuracy and relevance in information migration and management.
-                                </li>
-                            </ul>
+
+                    <div class="relative">
+                        <div class="md:flex md:items-center">
+                            <div class="md:w-1/2 md:pr-8 md:text-right">
+                                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-primary-dark">
+                                    <span class="inline-block px-3 py-1 bg-primary text-white text-sm font-semibold rounded-full mb-2">2023 - 2024</span>
+                                    <h3 class="text-xl font-bold text-primary dark:text-primary-light mb-2" data-es="Practicante" data-en="Intern">Intern</h3>
+                                    <h4 class="text-lg font-semibold text-primary-dark dark:text-primary mb-3">Banco Ripley Chile - Santiago, Chile</h4>
+                                    <ul class="text-left space-y-2 text-gray-700 dark:text-gray-300">
+                                        <li data-es="Documenté la conexión de servidores on-premise y procesos en SQL Server, asegurando la trazabilidad de los flujos de datos y mejorando la visibilidad de los procesos en un 25%." data-en="Documented the connection of on-premise servers and processes in SQL Server, ensuring data flow traceability and improving process visibility by 25%.">• Documented server connections and SQL processes, improving visibility by 25%.</li>
+                                        <li data-es="Diseñé reportes analíticos que facilitaron la toma de decisiones estratégicas, permitiendo anticipar problemas y reducir tiempos de respuesta en un 20%." data-en="Designed analytical reports that facilitated strategic decision-making, allowing problem anticipation and reducing response times by 20%.">• Designed analytical reports, reducing response times by 20%.</li>
+                                        <li data-es="Colaboré con equipos técnicos y de negocio para garantizar la precisión y relevancia de los datos en la migración y gestión de información." data-en="Collaborated with technical and business teams to ensure data accuracy and relevance in information migration and management.">• Collaborated with technical and business teams to ensure data accuracy.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-primary-dark"></div>
+                            <div class="md:w-1/2"></div>
                         </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2022 - 2023</div>
-                        <h3 class="timeline-title" data-es="Desarrollador de Videojuegos" data-en="Game Developer">Game Developer</h3>
-                        <h4 class="timeline-subtitle">Arcadius Entertainment - Florida, EEUU (Remote)</h4>
-                        <div class="timeline-description">
-                            <ul>
-                                <li data-es="Implementé funcionalidades en Unreal Engine 5.2 utilizando Blueprint y C++, mejorando la estabilidad y rendimiento de las aplicaciones."
-                                    data-en="Implemented functionalities in Unreal Engine 5.2 using Blueprint and C++, improving application stability and performance.">
-                                    Implemented functionalities in Unreal Engine 5.2 using Blueprint and C++, improving application stability and performance.
-                                </li>
-                                <li data-es="Optimicé la infraestructura de red, reduciendo la latencia en un 20% en aplicaciones con conexión en tiempo real."
-                                    data-en="Optimized network infrastructure, reducing latency by 20% in real-time connected applications.">
-                                    Optimized network infrastructure, reducing latency by 20% in real-time connected applications.
-                                </li>
-                                <li data-es="Colaboré con equipos internacionales en un entorno remoto, utilizando inglés como idioma principal en reuniones y documentación."
-                                    data-en="Collaborated with international teams in a remote environment, using English as the primary language in meetings and documentation.">
-                                    Collaborated with international teams in a remote environment, using English as the primary language in meetings and documentation.
-                                </li>
-                            </ul>
+
+                    <div class="relative">
+                        <div class="md:flex md:items-center md:flex-row-reverse">
+                            <div class="md:w-1/2 md:pl-8">
+                                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-primary-dark">
+                                    <span class="inline-block px-3 py-1 bg-primary text-white text-sm font-semibold rounded-full mb-2">2022 - 2023</span>
+                                    <h3 class="text-xl font-bold text-primary dark:text-primary-light mb-2" data-es="Desarrollador de Videojuegos" data-en="Game Developer">Game Developer</h3>
+                                    <h4 class="text-lg font-semibold text-primary-dark dark:text-primary mb-3">Arcadius Entertainment - Florida, EEUU (Remote)</h4>
+                                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                        <li data-es="Implementé funcionalidades en Unreal Engine 5.2 utilizando Blueprint y C++, mejorando la estabilidad y rendimiento de las aplicaciones." data-en="Implemented functionalities in Unreal Engine 5.2 using Blueprint and C++, improving application stability and performance.">• Implemented functionalities in Unreal Engine 5.2 using Blueprint and C++.</li>
+                                        <li data-es="Optimicé la infraestructura de red, reduciendo la latencia en un 20% en aplicaciones con conexión en tiempo real." data-en="Optimized network infrastructure, reducing latency by 20% in real-time connected applications.">• Optimized network infrastructure, reducing latency by 20%.</li>
+                                        <li data-es="Colaboré con equipos internacionales en un entorno remoto, utilizando inglés como idioma principal en reuniones y documentación." data-en="Collaborated with international teams in a remote environment, using English as the primary language in meetings and documentation.">• Collaborated with international teams in a remote environment.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-primary-dark"></div>
+                            <div class="md:w-1/2"></div>
                         </div>
                     </div>
                 </div>
@@ -248,66 +260,58 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title" data-es="Proyectos" data-en="Projects">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image" style="background-color: #9b59b6;">
-                        <i class="fas fa-gamepad"></i>
+    <section id="projects" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-primary dark:text-primary-light" data-es="Proyectos" data-en="Projects">Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 smooth-transition">
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-700 h-48 flex items-center justify-center">
+                        <i class="fas fa-gamepad text-white text-6xl"></i>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title" data-es="Juego Multijugador en Desarrollo" data-en="Multiplayer Game in Development">Multiplayer Game in Development</h3>
-                        <div class="project-tags">
-                            <span class="tag">Unreal Engine 5.5</span>
-                            <span class="tag">C++</span>
-                            <span class="tag">Blueprints</span>
-                            <span class="tag">Multiplayer</span>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary dark:text-primary-light" data-es="Juego Multijugador en Desarrollo" data-en="Multiplayer Game in Development">Multiplayer Game in Development</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium">Unreal Engine 5.5</span>
+                            <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium">C++</span>
+                            <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium">Blueprints</span>
+                            <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium">Multiplayer</span>
                         </div>
-                        <p class="project-description" data-es="Primer juego en desarrollo para Lazy Cat Studios. Un título multijugador con sistemas de red optimizados, renderizado de alta fidelidad y mecánicas de juego innovadoras. Actualmente en fase de desarrollo inicial."
-                           data-en="First game in development for Lazy Cat Studios. A multiplayer title with optimized network systems, high-fidelity rendering, and innovative gameplay mechanics. Currently in early development phase.">
-                           First game in development for Lazy Cat Studios. A multiplayer title with optimized network systems, high-fidelity rendering, and innovative gameplay mechanics. Currently in early development phase.
-                        </p>
+                        <p class="text-gray-700 dark:text-gray-300" data-es="Primer juego en desarrollo para Lazy Cat Studios. Un título multijugador con sistemas de red optimizados, renderizado de alta fidelidad y mecánicas de juego innovadoras. Actualmente en fase de desarrollo inicial." data-en="First game in development for Lazy Cat Studios. A multiplayer title with optimized network systems, high-fidelity rendering, and innovative gameplay mechanics. Currently in early development phase.">First game in development for Lazy Cat Studios. A multiplayer title with optimized network systems, high-fidelity rendering, and innovative gameplay mechanics.</p>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-color: #3498db;">
-                        <i class="fas fa-folder-open"></i>
+
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 smooth-transition">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 h-48 flex items-center justify-center">
+                        <i class="fas fa-folder-open text-white text-6xl"></i>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title" data-es="Sort-er" data-en="Sort-er">Sort-er</h3>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">File Management</span>
-                            <span class="tag">Automation</span>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary dark:text-primary-light">Sort-er</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium">Python</span>
+                            <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium">File Management</span>
+                            <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium">Automation</span>
                         </div>
-                        <p class="project-description" data-es="Herramienta de clasificación de archivos que organiza automáticamente los archivos de una carpeta en subcarpetas según su extensión. Aumenta la productividad y mejora la organización del sistema de archivos."
-                           data-en="File sorting tool that automatically organizes files from a folder into subfolders based on their extension. Increases productivity and improves file system organization.">
-                           File sorting tool that automatically organizes files from a folder into subfolders based on their extension. Increases productivity and improves file system organization.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/Kunhtrats/sort-er" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4" data-es="Herramienta de clasificación de archivos que organiza automáticamente los archivos de una carpeta en subcarpetas según su extensión. Aumenta la productividad y mejora la organización del sistema de archivos." data-en="File sorting tool that automatically organizes files from a folder into subfolders based on their extension. Increases productivity and improves file system organization.">File sorting tool that automatically organizes files from a folder into subfolders based on their extension. Increases productivity and improves file system organization.</p>
+                        <a href="https://github.com/Kunhtrats/sort-er" target="_blank" class="inline-flex items-center gap-2 text-primary dark:text-primary-light hover:underline font-semibold">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-color: #2ecc71;">
-                        <i class="fas fa-cubes"></i>
+
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 smooth-transition">
+                    <div class="bg-gradient-to-br from-green-500 to-green-700 h-48 flex items-center justify-center">
+                        <i class="fas fa-cubes text-white text-6xl"></i>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title" data-es="Componentes FAB para Unreal Engine" data-en="FAB Components for Unreal Engine">FAB Components for Unreal Engine</h3>
-                        <div class="project-tags">
-                            <span class="tag">Unreal Engine</span>
-                            <span class="tag">C++</span>
-                            <span class="tag">Optimization</span>
-                            <span class="tag">Marketplace</span>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary dark:text-primary-light" data-es="Componentes FAB para Unreal Engine" data-en="FAB Components for Unreal Engine">FAB Components for Unreal Engine</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium">Unreal Engine</span>
+                            <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium">C++</span>
+                            <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium">Optimization</span>
+                            <span class="px-3 py-1 bg-secondary dark:bg-secondary-dark text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium">Marketplace</span>
                         </div>
-                        <p class="project-description" data-es="Desarrollo de componentes de optimización y multijugador para el Marketplace de Unreal Engine. Soluciones que mejoran el rendimiento y facilitan la implementación de funcionalidades de red para desarrolladores."
-                           data-en="Development of optimization and multiplayer components for the Unreal Engine Marketplace. Solutions that improve performance and facilitate the implementation of network functionality for developers.">
-                           Development of optimization and multiplayer components for the Unreal Engine Marketplace. Solutions that improve performance and facilitate the implementation of network functionality for developers.
-                        </p>
+                        <p class="text-gray-700 dark:text-gray-300" data-es="Desarrollo de componentes de optimización y multijugador para el Marketplace de Unreal Engine. Soluciones que mejoran el rendimiento y facilitan la implementación de funcionalidades de red para desarrolladores." data-en="Development of optimization and multiplayer components for the Unreal Engine Marketplace. Solutions that improve performance and facilitate the implementation of network functionality for developers.">Development of optimization and multiplayer components for the Unreal Engine Marketplace. Solutions that improve performance and facilitate network functionality.</p>
                     </div>
                 </div>
             </div>
@@ -315,32 +319,42 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title" data-es="Contacto" data-en="Contact">Contact</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3 class="contact-heading" data-es="¡Hablemos!" data-en="Let's Talk!">Let's Talk!</h3>
-                    <p class="contact-text" data-es="Estoy interesado en oportunidades de trabajo donde pueda contribuir, aprender y crecer. Si tienes una solicitud o pregunta, no dudes en contactarme."
-                       data-en="I'm interested in job opportunities where I can contribute, learn, and grow. If you have a request or question, don't hesitate to contact me.">
-                       I'm interested in job opportunities where I can contribute, learn, and grow. If you have a request or question, don't hesitate to contact me.
-                    </p>
-                    <div class="contact-links">
-                        <a href="mailto:mi.alarconr@proton.me" class="contact-link">
-                            <i class="fas fa-envelope"></i>
-                            mi.alarconr@proton.me
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-primary dark:text-primary-light" data-es="Contacto" data-en="Contact">Contact</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
+                    <h3 class="text-2xl font-bold mb-4 text-primary dark:text-primary-light" data-es="¡Hablemos!" data-en="Let's Talk!">Let's Talk!</h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-8" data-es="Estoy interesado en oportunidades de trabajo donde pueda contribuir, aprender y crecer. Si tienes una solicitud o pregunta, no dudes en contactarme." data-en="I'm interested in job opportunities where I can contribute, learn, and grow. If you have a request or question, don't hesitate to contact me.">I'm interested in job opportunities where I can contribute, learn, and grow. If you have a request or question, don't hesitate to contact me.</p>
+                    
+                    <div class="space-y-4">
+                        <a href="mailto:mi.alarconr@proton.me" class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 smooth-transition group">
+                            <div class="flex items-center justify-center w-12 h-12 bg-primary rounded-lg group-hover:scale-110 smooth-transition">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-800 dark:text-gray-200 font-medium">mi.alarconr@proton.me</span>
                         </a>
-                        <a href="tel:+56976927361" class="contact-link">
-                            <i class="fas fa-phone"></i>
-                            +56 976927361
+                        
+                        <a href="tel:+56976927361" class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 smooth-transition group">
+                            <div class="flex items-center justify-center w-12 h-12 bg-primary rounded-lg group-hover:scale-110 smooth-transition">
+                                <i class="fas fa-phone text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-800 dark:text-gray-200 font-medium">+56 976927361</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/" class="contact-link" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                            <span data-es="Perfil de LinkedIn" data-en="LinkedIn Profile">LinkedIn Profile</span>
+                        
+                        <a href="https://www.linkedin.com/in/mialarconr/" target="_blank" class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 smooth-transition group">
+                            <div class="flex items-center justify-center w-12 h-12 bg-primary rounded-lg group-hover:scale-110 smooth-transition">
+                                <i class="fab fa-linkedin text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-800 dark:text-gray-200 font-medium" data-es="Perfil de LinkedIn" data-en="LinkedIn Profile">LinkedIn Profile</span>
                         </a>
-                        <a href="https://github.com/kunhtrats" class="contact-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                            GitHub
+                        
+                        <a href="https://github.com/kunhtrats" target="_blank" class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 smooth-transition group">
+                            <div class="flex items-center justify-center w-12 h-12 bg-primary rounded-lg group-hover:scale-110 smooth-transition">
+                                <i class="fab fa-github text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-800 dark:text-gray-200 font-medium">GitHub</span>
                         </a>
                     </div>
                 </div>
@@ -349,24 +363,84 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p class="footer-text" data-es="© 2025 Miguel Benjamín Alarcón Rojas. Todos los derechos reservados." 
-               data-en="© 2025 Miguel Benjamín Alarcón Rojas. All rights reserved.">
-               © 2025 Miguel Benjamín Alarcón Rojas. All rights reserved.
-            </p>
-            <div class="footer-links">
-                <a href="https://github.com/kunhtrats" class="footer-link" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/mialarconr/" class="footer-link" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:mi.alarconr@proton.me" class="footer-link">
-                    <i class="fas fa-envelope"></i>
-                </a>
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-600 dark:text-gray-400" data-es="© 2025 Miguel Benjamín Alarcón Rojas. Todos los derechos reservados." data-en="© 2025 Miguel Benjamín Alarcón Rojas. All rights reserved.">© 2025 Miguel Benjamín Alarcón Rojas. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="https://github.com/kunhtrats" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light smooth-transition">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mialarconr/" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light smooth-transition">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="mailto:mi.alarconr@proton.me" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light smooth-transition">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            themeToggle.innerHTML = isDark ? '<i class="fas fa-moon text-gray-700 dark:text-gray-300"></i>' : '<i class="fas fa-sun text-gray-700 dark:text-gray-300"></i>';
+        });
+
+        const languageToggle = document.getElementById('language-toggle');
+        const currentLang = document.getElementById('current-lang');
+        let isEnglish = true;
+
+        languageToggle.addEventListener('click', () => {
+            isEnglish = !isEnglish;
+            currentLang.textContent = isEnglish ? 'EN' : 'ES';
+            setLanguage(isEnglish ? 'en' : 'es');
+        });
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+                const translation = element.getAttribute('data-' + lang);
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = translation;
+                } else {
+                    element.textContent = translation;
+                }
+            });
+        }
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenuBtn.innerHTML = isOpen ? '<i class="fas fa-times text-gray-700 dark:text-gray-300"></i>' : '<i class="fas fa-bars text-gray-700 dark:text-gray-300"></i>';
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-gray-700 dark:text-gray-300"></i>';
+                    }
+                    
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        setLanguage('en');
+    </script>
 </body>
 </html>
